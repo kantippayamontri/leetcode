@@ -27,7 +27,7 @@ def read_int(number_split: int = 1):
     return map(int, input().split())
 
 
-number_of_examples = 3
+number_of_examples = 1
 
 
 def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
@@ -93,10 +93,52 @@ def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
     print(nums1) #remove this line for submit
 
 
+def merge_2(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+
+    if m==0 and n != 0:
+        for i in range(n):
+            nums1[i] = nums2[i]
+    elif m !=0 and n==0:
+        pass
+    else:
+    
+        end_idx = m + n -1
+        nums1_end = m-1
+        nums2_end = n-1
+    
+        while nums1_end >= 0 and nums2_end >= 0:
+            if nums2[nums2_end] > nums1[nums1_end]:
+                nums1[end_idx] = nums2[nums2_end]
+                nums2_end -=1
+                end_idx -=1
+            elif nums2[nums2_end] < nums1[nums1_end]:
+                nums1[end_idx] = nums1[nums1_end]
+                nums1[nums1_end] = 0
+                nums1_end -=1
+                end_idx-=1
+            elif nums2[nums2_end] == nums1[nums1_end]:
+                nums1[end_idx] = nums2[nums2_end]
+                nums2_end -=1
+                end_idx -=1
+                
+                nums1[end_idx] = nums1[nums1_end]
+                nums1_end -=1
+                end_idx -=1
+            
+        
+        while end_idx >= 0 and nums2_end >=0:
+            nums1[end_idx] = nums2[nums2_end]
+            nums2_end -= 1
+            end_idx -= 1
+            
+    
+    print(nums1)
+
+
 for _ in range(number_of_examples):
     nums1 = read_list_int()
     m = read_int()
     nums2 = read_list_int()
     n = read_int()
 
-    merge(nums1=nums1, m=m, nums2=nums2, n=n)
+    merge_2(nums1=nums1, m=m, nums2=nums2, n=n)

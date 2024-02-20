@@ -1,9 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/kantip/Code/leetcode/88_Merge_Sorted_Array/code.py", line 86, in <module>
-    merge(nums1=nums1, m=m, nums2=nums2, n=n)
-  File "/Users/kantip/Code/leetcode/88_Merge_Sorted_Array/code.py", line 65, in merge
-    insert_arr(arr=nums1, index=index_search + 1, value=nums2[index])
-  File "/Users/kantip/Code/leetcode/88_Merge_Sorted_Array/code.py", line 49, in insert_arr
-    val_before = arr[index]
-                 ~~~^^^^^^^
-IndexError: list index out of range
