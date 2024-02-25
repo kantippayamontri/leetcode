@@ -24,19 +24,37 @@ def read_int(number_split:int = 1) :
 
     return map(int, input().split())
 
-number_of_examples = 3
+number_of_examples = 2
+import math
 
-def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-    """
-    Do not return anything, modify nums1 in-place instead.
-    """
+def majorityElement( nums: List[int]) -> int:
+    count_dict = {}
+    m = math.ceil(len(nums) /2)
+    for n in nums:
+        if n not in count_dict.keys():
+            count_dict[n] = 1
+        else:
+            count_dict[n] += 1
+            if count_dict[n] >=m:
+                return n
+                # print(n)
 
-    print(nums1,m,nums2,n)
+def majorityElement_moore( nums: List[int]) -> int:
+    # this function use moore voting algorithm
+    count=0
+    element=0
+    for n in nums:
+        if count==0:
+            element=n
+            count=1
+        elif element==n:
+            count += 1
+        else:
+            count -=1
+    print(element)
 
 for _ in range(number_of_examples):
-    nums1 = read_list_int()
-    m = read_int()
-    nums2 = read_list_int()
-    n = read_int()
+    nums = read_list_int()
+    # majorityElement(nums=nums)
+    majorityElement_moore(nums=nums)
 
-    merge(nums1=nums1, m=m, nums2=nums2,n=n)
