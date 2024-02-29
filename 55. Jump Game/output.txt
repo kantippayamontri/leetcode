@@ -1,0 +1,7 @@
+True
+False
+False
+True
+True
+
+Elapsed time: 0.0166 ms
