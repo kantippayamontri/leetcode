@@ -1,12 +1,13 @@
 import sys
 import typing
 from typing import List
+import time
 
 sys.stdin = open("input.txt", "r")
 sys.stdout = open("output.txt", "w")
 # sys.stderr = open("error.txt", "w")
 
-def read_list_int() -> List[int]:
+def read_list_int():
     string_data = input()
     if string_data == "[]":
         return []
@@ -25,18 +26,13 @@ def read_int(number_split:int = 1) :
     return map(int, input().split())
 
 number_of_examples = 3
-
-def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-    """
-    Do not return anything, modify nums1 in-place instead.
-    """
-
-    print(nums1,m,nums2,n)
-
+start_time = time.time()
 for _ in range(number_of_examples):
     nums1 = read_list_int()
     m = read_int()
-    nums2 = read_list_int()
-    n = read_int()
+    # print(Solution().)
 
-    merge(nums1=nums1, m=m, nums2=nums2,n=n)
+end_time = time.time()
+elapsed_time = end_time - start_time
+print(f"")
+print(f"Elapsed time: {(elapsed_time * 1000 /number_of_examples ) :.4f} ms")
