@@ -1,11 +1,14 @@
+import itertools
+import operator
 import sys
+import time
 import typing
 from typing import List
-import time
 
 sys.stdin = open("input.txt", "r")
 sys.stdout = open("output.txt", "w")
 # sys.stderr = open("error.txt", "w")
+
 
 def read_list_int():
     string_data = input()
@@ -18,12 +21,14 @@ def read_list_int():
     # Convert each element to an integer
     int_list = [int(x) for x in list_data]
     return int_list
-    
-def read_int(number_split:int = 1) :
+
+
+def read_int(number_split: int = 1):
     if number_split == 1:
         return int(input())
 
     return map(int, input().split())
+
 
 number_of_examples = 3
 start_time = time.time()
