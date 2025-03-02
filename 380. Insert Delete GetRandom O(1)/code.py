@@ -14,6 +14,7 @@ class RandomizedSet:
         self.index_check = {}
         return None
 
+
     def insert(self, val: int) -> bool:
         if val not in self.index_check:
             self.data.append(val)

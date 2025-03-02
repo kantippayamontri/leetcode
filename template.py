@@ -40,4 +40,4 @@ for _ in range(number_of_examples):
 end_time = time.time()
 elapsed_time = end_time - start_time
 print(f"")
-print(f"Elapsed time: {(elapsed_time * 1000 /number_of_examples ) :.4f} ms")
+print(f"Elapsed time: {(elapsed_time * 1000 / number_of_examples):.4f} ms")

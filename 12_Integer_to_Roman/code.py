@@ -18,7 +18,7 @@ def compute(digit: int, val: int):
 		return "M" * val
 	
 	ans = ""
-	
+
 	# check if digit is 4 or 9
 	if val == 4:
 		previous_roman = digit_lists[digit][1]

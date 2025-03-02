@@ -78,3 +78,7 @@ class Utils:
 
         sys.stdin = open(Path(path) / "input.txt", "r")
         sys.stdout = open(Path(path) / "output.txt", "w")
+
+    @staticmethod
+    def create_project():
+        ...
